@@ -1,0 +1,262 @@
+/* CHI TIẾT SẢN PHẨM */
+
+.detail-product-vettt {
+    display: block;
+}
+
+.product-single {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px 40px -10px;
+    width: 100%;
+    padding-top: 50px;
+}
+
+.product-left {
+    padding-left: 20px;
+    width: 50%;
+}
+
+.product-right {
+    width: 50%;
+    padding-left: 10px;
+}
+
+.default {
+    width: calc(100%);
+    float: left;
+}
+
+.slides-detail__top {
+    position: relative;
+}
+
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.slides-detail__top .image {
+    width: 100%;
+}
+
+.slides-detail__top .image img {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slides-detail__top .button {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 5;
+}
+
+.slides-detail__top .button a {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    vertical-align: middle;
+    align-items: center;
+    color: #ef5104;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.slides-detail__bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.slides-detail__bottom .item {
+    width: 23%;
+    float: left;
+}
+
+.slides-detail__bottom .item img {
+    width: 100%;
+}
+
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 16px;
+    margin: 0;
+    padding-left: 0;
+    align-items: center;
+    color: #666;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: "\f105";
+    position: relative;
+    margin: 0 0.6em;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: "Font Awesome 5 Free";
+    color: #999;
+}
+
+.sticky-sidebar {
+    position: relative;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-single .product-name {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    white-space: normal;
+    color: #222;
+}
+
+.product-meta {
+    margin-bottom: 1.8rem;
+    color: #999;
+    font-size: 1.2rem;
+}
+
+.product-single .product-price {
+    display: block;
+    margin-bottom: 1.1rem;
+    color: #fec348;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1;
+}
+
+.product-price .price-new {
+    font-size: 24px;
+    color: #fd3003;
+    text-shadow: 0 0 black;
+}
+
+.product-form-group {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.input-group {
+    display: inline-flex;
+    width: 110px;
+    height: 45px;
+    margin-right: 10px;
+}
+
+.input-group button {
+    padding: 0;
+    width: 31px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    color: #222;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.input-group .form-control {
+    flex: 1;
+    padding: 0;
+    height: inherit;
+    font-size: 1.4rem;
+    border: solid #ccc;
+    border-width: 1px 0;
+    color: #222;
+    text-align: center;
+}
+
+.input-group .form-control {
+    display: block;
+    width: 100%;
+    min-height: 4.5rem;
+    border: 1px solid #e3e3e3;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #666;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    outline: 0;
+}
+
+.product-form .btn-cart {
+    border: 0;
+    flex: 1;
+    min-width: 13rem;
+    font-size: 1.4rem;
+    border-radius: 0.3rem;
+    background-color: #ef5204;
+    color: #fff;
+    cursor: pointer;
+    max-width: 20.7rem;
+    height: 46px;
+    margin-left: 7rem;
+}
+
+.product-single .product-action {
+    display: inline-block;
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+}
+
+.product-single .btn-wishlist,
+.product-single .btn-compare {
+    display: inline-block;
+    padding: 15px 0;
+    font-weight: 400;
+    font-size: 14px;
+    background-color: transparent;
+    transition: color 0.3s;
+    text-transform: none;
+    color: #666;
+}
+
+.minus-btn,
+.plus-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+#detail-product-vettt{
+    width: 80%;
+    z-index:999; 
+    position: fixed; 
+    margin: 0 auto; 
+    top: 50px; 
+    left: 10%;
+    background-color: #fff
+}
+#x-button-detail{
+    position: absolute;
+    cursor: pointer;
+    right: 10px;
+    top: 10px;
+}

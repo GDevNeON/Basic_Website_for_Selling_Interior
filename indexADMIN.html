@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="./assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image./assets/favicon/png" sizes="192x192"  href="./assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image./assets/favicon/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image./assets/favicon/png" sizes="96x96" href="./assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image./assets/favicon/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./assets/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="./assets/css/styleADMIN.css">
+    <link rel="stylesheet" href="./assets/css/chiTietDonHang.css">
+    <link rel="stylesheet" href="./assets/fonts/stylesheet.css">
+</head>
+<body>
+    <div class="container">
+        <div id="overlay"></div>
+        <div class="menu-left-hidden" id="menu-left">
+            <div class="logo">
+                <img id="logo-adminID" src="./assets/image/logoNew.png" width="150px" alt="">
+            </div>
+            <ul class="menu">
+                <li class="item" id="productTable">
+                    <a href="#!" >
+                        <svg width="20px" class="icon-menuLeft" viewBox="0 0 50 50">  
+                            <path d="M 1 3 L 1 15 L 3 15 L 3 48 L 47 48 L 47 15 L 49 15 L 49 3 Z M 3 5 L 47 5 L 47 13 L 3 13 Z M 5 15 L 45 15 L 45 46 L 5 46 Z M 17.5 19 C 15.578125 19 14 20.578125 14 22.5 C 14 24.421875 15.578125 26 17.5 26 L 32.5 26 C 34.421875 26 36 24.421875 36 22.5 C 36 20.578125 34.421875 19 32.5 19 Z M 17.5 21 L 32.5 21 C 33.339844 21 34 21.660156 34 22.5 C 34 23.339844 33.339844 24 32.5 24 L 17.5 24 C 16.660156 24 16 23.339844 16 22.5 C 16 21.660156 16.660156 21 17.5 21 Z"></path>                         
+                        </svg>
+                        <span class="item-title">Sản phẩm</span>
+                    </a>
+                </li>
+                <li class="item" id="userTable">
+                    <a href="#!">
+                        <svg width="20px" class="icon-menuLeft" viewBox="0 0 24 24"><path d="M9 11a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm0-6a2 2 0 1 1-2 2 2 2 0 0 1 2-2zM17 13a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm0-4a1 1 0 1 1-1 1 1 1 0 0 1 1-1zM17 14a5 5 0 0 0-3.06 1.05A7 7 0 0 0 2 20a1 1 0 0 0 2 0 5 5 0 0 1 10 0 1 1 0 0 0 2 0 6.9 6.9 0 0 0-.86-3.35A3 3 0 0 1 20 19a1 1 0 0 0 2 0 5 5 0 0 0-5-5z"></path></svg>
+                        <span class="item-title">Khách hàng</span>
+                    </a>
+                </li>
+                <li class="item" id="detailTable">
+                    <a href="#!">
+                        <svg width="20px" class="icon-menuLeft" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.09878 1.25004C7.14683 1.25006 7.19559 1.25008 7.24508 1.25008H16.7551C16.8045 1.25008 16.8533 1.25006 16.9014 1.25004C17.9181 1.2496 18.6178 1.24929 19.2072 1.45435C20.3201 1.84161 21.1842 2.73726 21.5547 3.86559L20.8421 4.09954L21.5547 3.86559C21.7507 4.46271 21.7505 5.17254 21.7501 6.22655C21.7501 6.27372 21.7501 6.32158 21.7501 6.37014V20.3743C21.7501 21.8395 20.0231 22.7118 18.8857 21.671C18.8062 21.5983 18.694 21.5983 18.6145 21.671L18.1314 22.1131C17.2032 22.9624 15.7969 22.9624 14.8688 22.1131C14.5138 21.7882 13.9864 21.7882 13.6314 22.1131C12.7032 22.9624 11.2969 22.9624 10.3688 22.1131C10.0138 21.7882 9.48637 21.7882 9.13138 22.1131C8.20319 22.9624 6.79694 22.9624 5.86875 22.1131L5.38566 21.671C5.30618 21.5983 5.19395 21.5983 5.11448 21.671C3.97705 22.7118 2.25007 21.8395 2.25007 20.3743V6.37014C2.25007 6.32158 2.25005 6.27372 2.25003 6.22655C2.24965 5.17255 2.24939 4.46271 2.44545 3.86559C2.81591 2.73726 3.68002 1.84161 4.79298 1.45435C5.3823 1.24929 6.08203 1.2496 7.09878 1.25004ZM7.24508 2.75008C6.024 2.75008 5.6034 2.76057 5.28593 2.87103C4.62655 3.10047 4.09919 3.63728 3.8706 4.3335C3.75951 4.67183 3.75007 5.11796 3.75007 6.37014V20.3743C3.75007 20.4933 3.80999 20.5661 3.88517 20.6009C3.92434 20.619 3.96264 20.6237 3.99456 20.6194C4.0227 20.6156 4.05911 20.6035 4.10185 20.5644C4.75453 19.9671 5.74561 19.9671 6.39828 20.5644L6.88138 21.0065C7.23637 21.3313 7.76377 21.3313 8.11875 21.0065C9.04694 20.1571 10.4532 20.1571 11.3814 21.0065C11.7364 21.3313 12.2638 21.3313 12.6188 21.0065C13.5469 20.1571 14.9532 20.1571 15.8814 21.0065C16.2364 21.3313 16.7638 21.3313 17.1188 21.0065L17.6019 20.5644C18.2545 19.9671 19.2456 19.9671 19.8983 20.5644C19.941 20.6035 19.9774 20.6156 20.0056 20.6194C20.0375 20.6237 20.0758 20.619 20.115 20.6009C20.1901 20.5661 20.2501 20.4934 20.2501 20.3743V6.37014C20.2501 5.11797 20.2406 4.67183 20.1295 4.3335C19.9009 3.63728 19.3736 3.10047 18.7142 2.87103C18.3967 2.76057 17.9761 2.75008 16.7551 2.75008H7.24508ZM6.25007 7.50008C6.25007 7.08587 6.58585 6.75008 7.00007 6.75008H7.50007C7.91428 6.75008 8.25007 7.08587 8.25007 7.50008C8.25007 7.9143 7.91428 8.25008 7.50007 8.25008H7.00007C6.58585 8.25008 6.25007 7.9143 6.25007 7.50008ZM9.75007 7.50008C9.75007 7.08587 10.0859 6.75008 10.5001 6.75008H17.0001C17.4143 6.75008 17.7501 7.08587 17.7501 7.50008C17.7501 7.9143 17.4143 8.25008 17.0001 8.25008H10.5001C10.0859 8.25008 9.75007 7.9143 9.75007 7.50008ZM6.25007 11.0001C6.25007 10.5859 6.58585 10.2501 7.00007 10.2501H7.50007C7.91428 10.2501 8.25007 10.5859 8.25007 11.0001C8.25007 11.4143 7.91428 11.7501 7.50007 11.7501H7.00007C6.58585 11.7501 6.25007 11.4143 6.25007 11.0001ZM9.75007 11.0001C9.75007 10.5859 10.0859 10.2501 10.5001 10.2501H17.0001C17.4143 10.2501 17.7501 10.5859 17.7501 11.0001C17.7501 11.4143 17.4143 11.7501 17.0001 11.7501H10.5001C10.0859 11.7501 9.75007 11.4143 9.75007 11.0001ZM6.25007 14.5001C6.25007 14.0859 6.58585 13.7501 7.00007 13.7501H7.50007C7.91428 13.7501 8.25007 14.0859 8.25007 14.5001C8.25007 14.9143 7.91428 15.2501 7.50007 15.2501H7.00007C6.58585 15.2501 6.25007 14.9143 6.25007 14.5001ZM9.75007 14.5001C9.75007 14.0859 10.0859 13.7501 10.5001 13.7501H17.0001C17.4143 13.7501 17.7501 14.0859 17.7501 14.5001C17.7501 14.9143 17.4143 15.2501 17.0001 15.2501H10.5001C10.0859 15.2501 9.75007 14.9143 9.75007 14.5001Z" fill="#1C274C"/>
+                        </svg>
+                        <span class="item-title">Đơn hàng</span>
+                    </a>
+                </li>
+                <li class="item" id="statisTable">
+                    <a href="#!">
+                        <svg width="20px" class="icon-menuLeft" viewBox="0 0 511 511">
+                            <path d="m415.5,32h-80.001c-0.089,0-0.174,0.01-0.262,0.013-7.204-9.708-18.747-16.013-31.737-16.013h-20.68c-5.521-9.749-15.921-16-27.32-16s-21.799,6.251-27.32,16h-20.68c-12.99,0-24.533,6.305-31.736,16.013-0.089-0.003-0.175-0.013-0.264-0.013h-80c-21.78,0-39.5,17.72-39.5,39.5v400c0,21.78 17.72,39.5 39.5,39.5h320c21.78,0 39.5-17.72 39.5-39.5v-400c0-21.78-17.72-39.5-39.5-39.5zm-232.5,23.5c0-13.509 10.991-24.5 24.5-24.5h25.47c3.174,0 6.004-1.998 7.067-4.988 2.341-6.587 8.555-11.012 15.463-11.012s13.122,4.425 15.463,11.012c1.063,2.99 3.893,4.988 7.067,4.988h25.47c13.509,0 24.5,10.991 24.5,24.5v24.5h-145v-24.5zm257,416c0,13.509-10.991,24.5-24.5,24.5h-320c-13.509,0-24.5-10.991-24.5-24.5v-400c0-13.509 10.991-24.5 24.5-24.5h73.431c-0.603,2.74-0.931,5.582-0.931,8.5v32c0,4.142 3.358,7.5 7.5,7.5h160c4.142,0 7.5-3.358 7.5-7.5v-32c0-2.918-0.328-5.76-0.931-8.5h73.431c13.509,0 24.5,10.991 24.5,24.5v400z"/>
+                            <path d="m415.5,64h-48c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5 7.5,7.5h40.5v385h-305v-385h40.5c4.142,0 7.5-3.358 7.5-7.5s-3.358-7.5-7.5-7.5h-48c-4.142,0-7.5,3.358-7.5,7.5v400c0,4.142 3.358,7.5 7.5,7.5h320c4.142,0 7.5-3.358 7.5-7.5v-400c0-4.142-3.358-7.5-7.5-7.5z"/>
+                            <path d="m255.5,32c-1.97,0-3.91,0.8-5.3,2.2-1.4,1.39-2.2,3.33-2.2,5.3 0,1.97 0.8,3.91 2.2,5.3 1.39,1.4 3.33,2.2 5.3,2.2 1.97,0 3.91-0.8 5.3-2.2 1.4-1.39 2.2-3.32 2.2-5.3 0-1.97-0.8-3.91-2.2-5.3-1.39-1.401-3.33-2.2-5.3-2.2z"/>
+                            <path d="m128,359.5c0,12.958 10.542,23.5 23.5,23.5s23.5-10.542 23.5-23.5c0-4.239-1.134-8.216-3.106-11.654l34.417-38.719c2.824,1.205 5.93,1.873 9.189,1.873 6.763,0 12.864-2.876 17.156-7.464l47.465,21.575c-0.08,0.786-0.121,1.582-0.121,2.389 0,12.958 10.542,23.5 23.5,23.5s23.5-10.542 23.5-23.5c0-7.067-3.14-13.41-8.092-17.721l39.05-94.835c0.51,0.033 1.024,0.056 1.542,0.056 12.958,0 23.5-10.542 23.5-23.5s-10.542-23.5-23.5-23.5-23.5,10.542-23.5,23.5c0,7.067 3.14,13.41 8.092,17.721l-39.05,94.835c-0.51-0.033-1.024-0.056-1.542-0.056-6.763,0-12.864,2.876-17.156,7.464l-47.465-21.575c0.08-0.786 0.121-1.582 0.121-2.389 0-12.958-10.542-23.5-23.5-23.5s-23.5,10.542-23.5,23.5c0,4.239 1.134,8.216 3.106,11.654l-34.417,38.719c-2.824-1.205-5.93-1.873-9.189-1.873-12.958,0-23.5,10.542-23.5,23.5zm231.5-176.5c4.687,0 8.5,3.813 8.5,8.5s-3.813,8.5-8.5,8.5-8.5-3.813-8.5-8.5 3.813-8.5 8.5-8.5zm-56,136c4.687,0 8.5,3.813 8.5,8.5s-3.813,8.5-8.5,8.5-8.5-3.813-8.5-8.5 3.813-8.5 8.5-8.5zm-88-40c4.687,0 8.5,3.813 8.5,8.5s-3.813,8.5-8.5,8.5-8.5-3.813-8.5-8.5 3.813-8.5 8.5-8.5zm-55.5,80.5c0,4.687-3.813,8.5-8.5,8.5s-8.5-3.813-8.5-8.5 3.813-8.5 8.5-8.5 8.5,3.813 8.5,8.5z"/>                 
+                        </svg>
+                        <span class="item-title">Thống kê</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="icon-hamburger" id="icon-exit">
+                <img src="./assets/icon/x-button.png" width="20px" alt="">
+            </div>
+        </div>
+        <div class="content-width100" id="content">
+            <div class="header">
+                <div class="container-header">
+                    <a href="#" class="icon-hamburger">
+                        <svg width="20px" viewBox="0 0 448 512">
+                            <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/>
+                        </svg>
+                    </a>
+                    <div class="header-right">
+                        <!-- <input type="text" class="search" placeholder="Tìm kiếm...">
+                        <a href="#" class="icon-search">
+                            <img src="./assets/icon/search-interface-symbol.png" width="17px" alt="">
+                        </a> -->
+                        <a href="#!" class="header-item">
+                            <svg width="20px" viewBox="0 0 512 512">
+                                <path d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"/>
+                            </svg>
+                        </a>
+                        <a href="#!" class="header-item">
+                            <svg width="20px" viewBox="0 0 448 512">
+                                <path d="M224 0c-17.7 0-32 14.3-32 32V49.9C119.5 61.4 64 124.2 64 200v33.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.4S14.8 416 24 416H424c9.2 0 17.6-5.3 21.6-13.6s2.9-18.2-2.9-25.4l-14.9-18.6C399.5 322.9 384 278.8 384 233.4V200c0-75.8-55.5-138.6-128-150.1V32c0-17.7-14.3-32-32-32zm0 96h8c57.4 0 104 46.6 104 104v33.4c0 47.9 13.9 94.6 39.7 134.6H72.3C98.1 328 112 281.3 112 233.4V200c0-57.4 46.6-104 104-104h8zm64 352H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7s18.7-28.3 18.7-45.3z"/>
+                            </svg>
+                        </a>
+                        <div class="header-item user">
+                            <a href="#!" class="circle-avatar">
+                                <img src="https://pdp.edu.vn/wp-content/uploads/2021/06/hinh-anh-gai-xinh-de-thuong-nhat-1-600x600.jpg" alt=""
+                                width="38px" style="border-radius: 50%;;">
+                            </a>
+                            <div class="user-dropdown">
+                                <div class="block-gia" style="width: 80px; height: 15px; position: absolute; right: 0; top: -15px;"></div>
+                                <div class="header-drop">
+                                    <h4>Your Name</h4>
+                                    <span>Web Designer</span>
+                                </div>
+                                <a href="" class="dropdown-item">
+                                    <img src="./assets/icon/user.png" width="15px" alt="">
+                                    My Profile
+                                </a>
+                                <a href="" class="dropdown-item">
+                                    <img src="./assets/icon/pen-to-square-regular (1).svg" width="15px" alt="">
+                                    Edit
+                                </a>
+                                <a href="" class="dropdown-item">
+                                    <img src="./assets/icon/information.png" width="15px" alt="">
+                                    Information
+                                </a>
+                                <a href="" class="dropdown-item">
+                                    <img src="./assets/icon/setting.png" width="15px" alt="">
+                                    Setting
+                                </a>
+                                <a href="./index.html" class="dropdown-item">
+                                    <img src="./assets/icon/arrow-right-from-bracket-solid.svg" width="15px" alt="">
+                                    Sign out
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="breadcrum-header">
+                <div >
+                    <h4 id="title-menu-content">Sản phẩm</h4>
+                </div>
+            </div>
+            <div class="box-table active"> 
+                <div class="contain_select_numRow">
+                    <label for="select">Số dòng</label>
+                    <select id="selectNumRow">
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                    </select>
+                </div>
+                <button id="add-product">
+                    <svg width="20px" viewBox="0 0 50 50"><path d="M 25 2 C 12.309295 2 2 12.309295 2 25 C 2 37.690705 12.309295 48 25 48 C 37.690705 48 48 37.690705 48 25 C 48 12.309295 37.690705 2 25 2 z M 25 4 C 36.609824 4 46 13.390176 46 25 C 46 36.609824 36.609824 46 25 46 C 13.390176 46 4 36.609824 4 25 C 4 13.390176 13.390176 4 25 4 z M 24 13 L 24 24 L 13 24 L 13 26 L 24 26 L 24 37 L 26 37 L 26 26 L 37 26 L 37 24 L 26 24 L 26 13 L 24 13 z">
+                    </svg>
+                    Thêm
+                </button>
+                <div id="contain_tableProduct">
+                    <table class="tableProduct">
+                        <tr>
+                            <th>Tên sản phẩm</th>
+                            <th>Hình ảnh</th>
+                            <th>Giá</th>
+                            <th></th>
+                        </tr>
+                        <tbody class="bodyTableProduct">
+    
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div id="contain_tableUser" style="display: none;">
+                    <table class="tableUser" >
+                        <tr>
+                            <th>Tên đăng nhập</th>
+                            <th>Tên người dùng</th>
+                            <th>Địa chỉ</th>
+                            <th>Số điện thoại</th>
+                        </tr>
+                        <tbody class="bodyTableUser">
+    
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="contain_tableOrder" style="display: none;">
+                    <table class="tableOrder" >
+                        <tr>
+                            <th>ID</th>
+                            <th>Khách hàng</th>
+                            <th>Ngày đặt</th>
+                            <th>Duyệt đơn</th>
+                        </tr>
+                        <tbody class="bodyTableOrder">
+    
+                        </tbody>
+                    </table>
+                </div>
+                <div id="contain_tableDetail" style="display: none">
+                    <div class="filters">
+                        <label for="startDay">Từ ngày:</label>
+                        <input type="date" id="startDay">
+                        <label for="endDay">Đến ngày:</label>
+                        <input type="date" id="endDay">
+                        <button id="seeButton">Xem</button>
+                    </div>
+
+                    <!--DANH SACH-->
+                    <div class="danhsach" id="ds"></div>
+                    <!--END DANH SACH-->
+                </div>
+                <div id="contain_tableStatis" style="display: none">
+                    <div class="filters">
+                        <label for="startDate">Từ ngày:</label>
+                        <input type="date" id="startDate">
+                        <label for="endDate">Đến ngày:</label>
+                        <input type="date" id="endDate">
+                        <label for="productType">Loại sản phẩm:</label>
+                        <select id="productType">
+                            <option value="">Tất cả</option>
+                            <option value="phong_khach">Phòng khách</option>
+                            <option value="phong_lamviec">Phòng làm việc</option>
+                            <option value="phong_an">Phòng ăn</option>
+                            <option value="phong_ngu">Phòng ngủ</option>
+                            <option value="phong_tam">Phòng tắm </option>
+                            <!-- Thêm các loại sản phẩm khác nếu cần -->
+                        </select>
+                        <button id="filterButton">Thống kê</button>
+                    </div>
+
+                    <table class="tableStatis">
+                        <tr>
+                            <th>Tên sản phẩm</th>
+                            <th>Hình ảnh</th>
+                            <th>Ngày bán</th>
+                            <th>Số lượng</th>
+                            <th>Giá</th>
+                        </tr>
+                        <tbody id="bodyTableStatis" class="bodyTableStatis"> </tbody>
+                    </table>
+                </div>
+                <ul class="listPage">
+                    <!-- <li class="active">1</li> -->
+                </ul>
+            </div>
+            <div class="box-table container-card not-active">
+                <form class="card">
+                    <div class="row-card">
+                        <label for="">Tên sản phẩm</label>
+                        <br>
+                        <input type="text" id="Add-name_product">
+                    </div>
+                    <span id="span_namePro"></span>
+                    <div class="row-card">
+                        <label for="">Loại sản phẩm</label>
+                        <br>
+                        <select name="" id="select_category">
+                            <option value="" disabled selected>Chọn phòng</option>
+                            <option value="phong_khach">Phòng khách</option>
+                            <option value="phong_lamviec">Phòng làm việc</option>
+                            <option value="phong_an">Phòng ăn</option>
+                            <option value="phong_ngu">Phòng ngủ</option>
+                            <option value="phong_tam">Phòng tắm </option>
+                        </select>
+                    </div>
+                    <span id="span_CategoryPro"></span>
+                    <div class="row-card">
+                        <label for="">Giá</label>
+                        <br>
+                        <input type="number" id="Add-price">
+                    </div>
+                    <span id="span_pricePro"></span>
+                    <div class="row-card">
+                        <label for="">Mô tả</label>
+                        <br>
+                        <textarea id="Add-detail_Product" ></textarea>
+                    </div>
+                    <span id="span_detailPro"></span>
+                    <div class="row-card">
+                        <label for="">Chọn ảnh mới</label>
+                        <br>
+                        <input type="file" id="fileInput" accept="image/*"> 
+                    </div>
+                    <span id="span_imagePro"></span>
+                    <!-- <div class="row-card up-img">
+                        <input type="file" id="fileInput" accept="image/*">
+                    </div> -->
+                    </form>
+                    <br>
+                    <button type="button" id="btn-submit">Update</button>
+                    <button type="button" id="btn-exit">Exit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/javascript/mainAdmin.js"></script>
+    <script src="./assets/javascript/createProduct.js"></script>
+    <script src="./assets/javascript/loadTableProductAndUser.js"></script>
+    <script src="./assets/javascript/createUser.js"></script>
+    <script src="./assets/javascript/ThongKe.js"></script>
+    <script src="./assets/javascript/chiTietDonHang.js"></script>
+</body>
+</html>

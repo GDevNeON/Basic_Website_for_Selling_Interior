@@ -1,0 +1,525 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#containerBag {
+  padding: 20px 40px;
+}
+
+body {
+  background-color: #f2f3f4;
+}
+body .shopBag .header_bag {
+  line-height: 20px;
+}
+body .shopBag .header_bag .title_bag {
+  display: flex;
+  padding: 20px 0;
+  align-items: center;
+}
+body .shopBag .header_bag .title_bag button {
+  margin-left: 10px;
+  border: none;
+  font-weight: 700;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+body .shopBag .productBag {
+  display: flex;
+}
+body .shopBag .productBag .yr_bag {
+  width: 70%;
+}
+body .shopBag .productBag .show_product {
+  background-color: white;
+  width: 100%;
+}
+body .shopBag .productBag .show_product .chat_with {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px 20px 10px 0;
+}
+body .shopBag .productBag .show_product .chat_with span {
+  margin-left: 10px;
+}
+body .shopBag .productBag .show_product .yr_product {
+  padding: 30px 15px;
+  display: flex;
+  align-items: flex-start;
+}
+body .shopBag .productBag .show_product .yr_product .decide_checkProduct {
+  display: flex;
+}
+body .shopBag .productBag .show_product .yr_product .check_product {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 38%;
+  margin-right: 20px;
+}
+body .shopBag .productBag .show_product .yr_product .check_product input {
+  width: 50%;
+}
+body .shopBag .productBag .show_product .yr_product .check_product img {
+  object-fit: contain;
+  height: 100%;
+  width: 80%;
+  border-radius: 5px;
+}
+body .shopBag .productBag .show_product .yr_product .content_package {
+  width: 60%;
+}
+body
+  .shopBag
+  .productBag
+  .show_product
+  .yr_product
+  .content_package
+  .shipping_method {
+  color: green;
+  border-radius: 10px;
+  padding: 6px 8px;
+  background-color: #eaf6ee;
+}
+body
+  .shopBag
+  .productBag
+  .show_product
+  .yr_product
+  .content_package
+  .type_product {
+  border: 1px solid #b7bbbf;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+body
+  .shopBag
+  .productBag
+  .show_product
+  .yr_product
+  .content_package
+  .name_product {
+  margin: 10px 0;
+}
+body
+  .shopBag
+  .productBag
+  .show_product
+  .yr_product
+  .content_package
+  .name_product
+  a {
+  text-decoration: none;
+  color: black;
+}
+body
+  .shopBag
+  .productBag
+  .show_product
+  .yr_product
+  .content_package
+  .icon_bag
+  .icon_heart {
+  margin-right: 15px;
+}
+body .shopBag .productBag .show_product .yr_product .price_product {
+  width: 25%;
+  text-align: right;
+}
+body .shopBag .productBag .show_product .yr_product .price_product p {
+  font-size: 20px;
+  font-weight: 700;
+}
+body .shopBag .productBag .show_product .yr_product .price_product span {
+  text-decoration: line-through;
+  font-size: 14px;
+  color: #b7bbbf;
+}
+body .shopBag .productBag .show_product .yr_product .decideBag {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+}
+body
+  .shopBag
+  .productBag
+  .show_product
+  .yr_product
+  .decideBag
+  .quantity_product {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body
+  .shopBag
+  .productBag
+  .show_product
+  .yr_product
+  .decideBag
+  .quantity_product
+  input {
+  width: 40px;
+  height: 30px;
+  text-align: center;
+  margin: 10px;
+  font-weight: 600;
+}
+body .shopBag .productBag .show_product .yr_product .decideBag .icon_bag {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 30%;
+}
+body .shopBag .productBag .shop_discount {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 20px;
+}
+body .shopBag .productBag .shop_discount span {
+  margin: 0 10px;
+}
+body .shopBag .yr_total {
+  width: 30%;
+  margin-left: 17px;
+}
+body .shopBag .yr_total .yr_endow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+}
+body .shopBag .yr_total .yr_endow .icon_discountShop {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+body .shopBag .yr_total .yr_endow .icon_discountShop span {
+  margin-left: 10px;
+}
+body .shopBag .yr_total .yr_endow .code {
+  color: #007aff;
+  cursor: pointer;
+}
+body .shopBag .yr_total .yr_bill {
+  padding: 10px;
+  background-color: white;
+  border-bottom: 3px #f2f3f4 solid;
+}
+body .shopBag .yr_total .yr_bill .total_bill {
+  display: flex;
+  justify-content: space-between;
+  line-height: 4.2rem;
+}
+body .shopBag .yr_total .yr_bill .total_bill .tinhTam {
+  font-weight: 600;
+}
+body .shopBag .yr_total .yr_bill .bnt_total button {
+  padding: 14px;
+  background: #ee2624;
+  border: #ee2624;
+  width: 100%;
+  cursor: pointer;
+  font-size: 17px;
+  color: white;
+}
+
+@media screen and (max-width: 710px) {
+  body
+    .shopBag
+    .productBag
+    .show_product
+    .yr_product
+    .content_package
+    .shipping_method
+    span {
+    font-size: 11px;
+  }
+  body
+    .shopBag
+    .productBag
+    .show_product
+    .yr_product
+    .content_package
+    .name_product
+    .a_name_product {
+    font-size: 11px;
+  }
+  body
+    .shopBag
+    .productBag
+    .show_product
+    .yr_product
+    .price_product
+    .p_price_product {
+    font-size: 13px;
+  }
+  body .shopBag .productBag .show_product .yr_product .price_product span {
+    font-size: 10px;
+  }
+  body
+    .shopBag
+    .productBag
+    .show_product
+    .yr_product
+    .decideBag
+    .quantity_product {
+    margin-left: 19px;
+    margin-bottom: 10px;
+  }
+
+  body
+    .shopBag
+    .productBag
+    .show_product
+    .yr_product
+    .decideBag
+    .quantity_product
+    .quality_input {
+    width: 25px;
+    height: 20px;
+    font-size: 10px;
+  }
+
+  body .shopBag .yr_total .yr_bill .total_bill {
+    flex-wrap: wrap;
+    justify-content: center;
+    line-height: 3.2rem;
+  }
+  body .shopBag .productBag .show_product .yr_product .decideBag .icon_bag {
+    flex-wrap: wrap;
+  }
+  body .shopBag .yr_total .yr_bill .total_bill span,
+  body .shopBag .yr_total .yr_bill .bnt_total button {
+    font-size: 11px;
+  }
+  #donhang .donhangItem {
+    font-size: 8px;
+  }
+  .close-button {
+    margin: 8px 0 8px 15px;
+  }
+}
+@media screen and (max-width: 431px) {
+  body .shopBag .header_bag .title_bag {
+    font-size: 12px;
+  }
+  body
+    .shopBag
+    .productBag
+    .show_product
+    .yr_product
+    .content_package
+    .shipping_method {
+    font-size: 8px;
+  }
+  body .shopBag .productBag .show_product .yr_product .decide_checkProduct {
+    width: 55%;
+  }
+  body .shopBag .productBag .show_product .yr_product {
+    padding: 20px 10px;
+  }
+  body .shopBag .productBag .show_product .yr_product .check_product {
+    margin-right: 8px;
+    width: 50%;
+  }
+  body .shopBag .productBag .show_product .yr_product .content_package {
+    width: 50%;
+  }
+  body
+    .shopBag
+    .productBag
+    .show_product
+    .yr_product
+    .content_package
+    .name_product {
+    margin: 0;
+  }
+
+  .shopBag
+    .productBag
+    .show_product
+    .yr_product
+    .content_package
+    .name_product
+    .a_name_product {
+    font-size: 9px;
+    font-weight: 600;
+  }
+
+  .shopBag
+    .productBag
+    .show_product
+    .yr_product
+    .price_product
+    .p_price_product {
+    font-size: 13px;
+  }
+  body .shopBag .productBag .show_product .yr_product .price_product span {
+    font-size: 9px;
+  }
+  body .shopBag .productBag .show_product .yr_product .price_product {
+    margin: 10px 70px 0 10px;
+    width: 20%;
+    margin: 0;
+  }
+  body .shopBag .productBag .show_product .yr_product .decideBag {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 20%;
+  }
+
+  .shopBag .productBag .show_product .yr_product .decideBag .quantity_product {
+    width: 50%;
+    margin-right: 20px;
+    margin-left: 30px;
+  }
+  body
+    .shopBag
+    .productBag
+    .show_product
+    .yr_product
+    .decideBag
+    .quantity_product
+    .quality_input {
+    font-size: 8px;
+    width: 30px;
+    height: 20px;
+  }
+  body .shopBag .productBag .show_product .yr_product .decideBag .icon_bag {
+    flex-wrap: wrap;
+    width: 50%;
+  }
+  body
+    .shopBag
+    .productBag
+    .show_product
+    .yr_product
+    .decideBag
+    .quantity_product
+    input {
+    margin: 0;
+    padding: 0;
+  }
+  body .shopBag .yr_total .yr_bill {
+    padding: 0;
+  }
+  body .shopBag .yr_total .yr_bill .total_bill {
+    flex-wrap: wrap;
+    justify-content: center;
+    line-height: 25px;
+    margin-bottom: 10px;
+  }
+  body .shopBag .yr_total .yr_bill .total_bill span {
+    font-size: 11px;
+  }
+
+  #btn_datHang {
+    font-size: 12px;
+    padding: 7px;
+  }
+  #donhang {
+    display: grid;
+    grid-template-columns: repeat(1fr, 3);
+  }
+  #donhang .donhangItem {
+    font-size: 9px;
+    padding: 6px;
+    font-weight: bold;
+  }
+  body .shopBag {
+    position: relative;
+  }
+  body .shopBag .productBag .yr_bag {
+    width: 100%;
+  }
+  body .shopBag .productBag {
+    flex-wrap: wrap;
+  }
+  body .shopBag .yr_total {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    width: 100%;
+    margin: 0;
+    z-index: 1;
+    left: 0;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  body .shopBag .yr_total .yr_bill {
+    display: flex;
+    margin: 0;
+    width: 100%;
+    display: table-column;
+  }
+  .yr_bill .total_bill button.close-button {
+    font-size: 9px;
+    width: 15px;
+    height: 15px;
+    transform: translate(100px, 5px);
+  }
+  #donhang .donhangItem {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  body
+    .shopBag
+    .productBag
+    .show_product
+    .yr_product
+    .content_package
+    .shipping_method
+    span {
+    font-size: 6px;
+  }
+  body
+    .shopBag
+    .productBag
+    .show_product
+    .yr_product
+    .content_package
+    .name_product
+    .a_name_product {
+    font-size: 8px;
+  }
+  body
+    .shopBag
+    .productBag
+    .show_product
+    .yr_product
+    .price_product
+    .p_price_product {
+    font-size: 10px;
+  }
+  body .shopBag .productBag .show_product .yr_product .price_product span {
+    font-size: 8px;
+  }
+  body
+    .shopBag
+    .productBag
+    .show_product
+    .yr_product
+    .decideBag
+    .quantity_product {
+    margin: 10px 15px 10px 20px;
+  }
+  .yr_total .yr_bill .total_bill button.close-button {
+    transform: translate(60px, 5px);
+  }
+}
