@@ -191,17 +191,10 @@ if (login.isLogin === 1) {
 
     var tbody = billHTML.querySelector("tbody");
 
-<<<<<<< HEAD
         bill.detailBill.forEach(function(product) {
             var productRow = document.createElement("tr");
             productRow.innerHTML = `
         <td>${product.productName}</td>
-=======
-    bill.detailBill.forEach(function (product) {
-      var productRow = document.createElement("tr");
-      productRow.innerHTML = `
-        <td>${product.idPro}</td>
->>>>>>> 2fc70d1eb70cdc3d4580979670fcfe82f7ee3b1b
         <td>${product.qualityPro}</td>
         <td>${product.pricePro.toLocaleString("vi-VN")}</td>
       `;
