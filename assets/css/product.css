@@ -227,6 +227,14 @@ body .shopBag .yr_total .yr_bill .bnt_total button {
   font-size: 17px;
   color: white;
 }
+
+@media screen and (max-width: 1025px) and (min-width: 822px) {
+  .containerBillProduct {
+    top: 11%;
+    left: 15%;
+  }
+}
+
 @media screen and (max-width: 821px) and (min-width: 711px) {
   body .shopBag .productBag .show_product .yr_product .decide_checkProduct {
     width: 50%;
