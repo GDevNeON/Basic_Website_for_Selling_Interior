@@ -215,7 +215,6 @@ if (login.isLogin === 1) {
     var containerBillProducts = document.querySelectorAll(
       ".containerBillProduct"
     );
-
     containerBillProducts.forEach(function (containerBillProduct) {
       containerBillProduct.style.display = "none";
     });
@@ -227,7 +226,6 @@ if (login.isLogin === 1) {
     var containerBillProducts = document.querySelectorAll(
       ".containerBillProduct"
     );
-
     containerBillProducts.forEach(function (containerBillProduct) {
       containerBillProduct.style.display = "none";
     });
