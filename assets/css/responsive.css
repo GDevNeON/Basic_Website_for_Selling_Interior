@@ -443,7 +443,7 @@
 }
 
 /* fix from lâm */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 430px) {
     .filter{
         padding: 2px;
     }
