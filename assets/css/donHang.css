@@ -165,9 +165,9 @@ body {
   .containerBillProduct {
     z-index: 21;
     position: fixed;
-    top: 92px;
+    top: 35%;
     width: 280px;
-    left: 114px;
+    left: 21%;
     max-height: 300px;
     overflow-y: auto;
   }
