@@ -226,21 +226,19 @@ document.getElementById('x-button-detail').addEventListener('click', function(){
   nenDen.style.display = 'none';
 })
 // phân trang
-
 let thisPage = 1;
 let limit = 8;
 let list = document.getElementsByClassName('box-product');
 //console.log(list)
 
-function loadItem(){
+function loadItem() {
     //console.log(thisPage)
     let beginGet = limit * (thisPage - 1);
     let endGet = limit * thisPage - 1;
-    for(var i=0; i<list.length; i++){
-        if(i >= beginGet &&  i <= endGet){
-          list[i].style.display = 'block';
-        }
-        else {
+    for (var i = 0; i < list.length; i++) {
+        if (i >= beginGet && i <= endGet) {
+            list[i].style.display = 'block';
+        } else {
             list[i].style.display = 'none';
         }
     }
@@ -248,36 +246,47 @@ function loadItem(){
 }
 loadItem();
 
-function listPage(){
+function listPage() {
     let count = Math.ceil(list.length / limit);
-    document.querySelector('.listPage').innerHTML = '';
+    let listPageContainer = document.querySelector('.listPage');
 
-    if(thisPage != 1){
+    // Check if there are fewer than 8 items, hide pagination
+    if (list.length <= limit) {
+        listPageContainer.style.display = 'none';
+        return;
+    } else {
+        listPageContainer.style.display = 'block';
+    }
+
+    listPageContainer.innerHTML = '';
+
+    if (thisPage != 1) {
         let prev = document.createElement('li');
         prev.innerText = 'PREV';
         prev.setAttribute('onclick', "changePage(" + (thisPage - 1) + ")");
-        document.querySelector('.listPage').appendChild(prev);
-    }
-    console.log(count);
-    for(i = 1; i <= count; i++){
-        let newPage = document.createElement('li');
-        newPage.innerText = i;
-        if(i == thisPage){
-            newPage.classList.add('active');
-        }
-            newPage.setAttribute('onclick', "changePage(" + i + ")");
-            document.querySelector('.listPage').appendChild(newPage);
+        listPageContainer.appendChild(prev);
     }
 
-    if(thisPage != count){
+    console.log(count);
+    for (let i = 1; i <= count; i++) {
+        let newPage = document.createElement('li');
+        newPage.innerText = i;
+        if (i == thisPage) {
+            newPage.classList.add('active');
+        }
+        newPage.setAttribute('onclick', "changePage(" + i + ")");
+        listPageContainer.appendChild(newPage);
+    }
+
+    if (thisPage != count) {
         let next = document.createElement('li');
         next.innerHTML = 'NEXT';
         next.setAttribute('onclick', "changePage(" + (thisPage + 1) + ")");
-        document.querySelector('.listPage').appendChild(next);
+        listPageContainer.appendChild(next);
     }
 }
 
-function changePage(i){
+function changePage(i) {
     thisPage = i;
     loadItem();
 }

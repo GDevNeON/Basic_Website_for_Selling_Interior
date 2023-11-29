@@ -27,6 +27,7 @@ function displayProducts() {
     // Sử dụng đối tượng để theo dõi thông tin của từng sản phẩm và tổng giá tiền
     const productTotals = {};
     let totalAmount = 0;
+    let totalQuantity = 0;
 
     Statistique.forEach(order => {
         order.detailBill.forEach(product => {
@@ -52,6 +53,7 @@ function displayProducts() {
 
                     // Cập nhật tổng giá tiền
                     totalAmount += product.pricePro * parseInt(product.qualityPro);
+                    totalQuantity += parseInt(product.qualityPro);
                 }
             }
         });
@@ -72,8 +74,8 @@ function displayProducts() {
 
     // Hiển thị tổng giá tiền
     const totalAmountRow = document.createElement('tr');
-    totalAmountRow.innerHTML = `<td colspan="4"><strong>Tổng giá tiền:</strong></td>
+    totalAmountRow.innerHTML = `<td colspan="3"><strong>Tổng:</strong></td>
+        <td style="color: red"><strong>${totalQuantity}</strong></td>
         <td style="color: red"><strong>${totalAmount}</strong></td>`;
     bodyTableStatis.appendChild(totalAmountRow);
 }
-

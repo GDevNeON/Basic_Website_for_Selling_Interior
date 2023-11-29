@@ -32,6 +32,7 @@ if(users.length == 0){
         userName: 'KietVIP',
         telephone: '0976077913',
         address: "Quận 6",
+        block: 0,
         userBag: []
     }
     users.push(newUser);
@@ -145,6 +146,7 @@ document.getElementsByClassName('btn-submit-register')[0].addEventListener('clic
             userName: nameUser,
             telephone: phoneNum,
             address: addressUser,
+            block: 0,
             userBag: []
             };
             users.push(newUser)
@@ -172,7 +174,9 @@ document.getElementsByClassName('btn-submit-login')[0].addEventListener('click',
         });
         console.log(foundUser);
         if (foundUser) {
-            if(foundUser.isAdmin == 0){
+            if(foundUser.block == 1){
+                alert('Tài khoản của bạn đã bị khóa do vi phạm!')
+            } else if(foundUser.isAdmin == 0){
                 // Đăng nhập thành công
                 alert('Đăng nhập thành công!');
                 var login = JSON.parse(localStorage.getItem('login'));

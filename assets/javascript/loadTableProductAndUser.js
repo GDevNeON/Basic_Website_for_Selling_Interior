@@ -6,7 +6,7 @@ products.forEach(product => {
   row.classList.add('row-product-admin')
   row.innerHTML = `<td>`+ product.productName + `</td>
   <td><img src="`+ product.imageProduct +`" width="80" alt="Hình ảnh sản phẩm"></td>
-  <td>`+ product.priceProduct +`</td>
+  <td>`+ product.priceProduct.toLocaleString('vi-VN') +`</td>
   <td>
     <button class="btn-edit btn-ed" data-id="`+ product.idProduct +`" fdprocessedid="vt1kwm" onclick = "editRow(this)">
       <img src="./assets/icon/pen-to-square-regular (1).svg" width="15px" alt=""> Sửa
@@ -119,7 +119,10 @@ function editRow(e) {
         updatedProduct.priceProduct = parseInt(price.value);
         updatedProduct.detailProduct = detail.value;
         updatedProduct.imageProduct = imageBase64;
-
+        var btnDeleteImg = document.getElementById('deleteImg');
+        if(btnDeleteImg.checked){
+            updatedProduct.imageProduct = './assets/image/picture-delete.png';
+        }
         
         // Cập nhật danh sách sản phẩm trong localStorage
         localStorage.setItem('products', JSON.stringify(products));
@@ -154,12 +157,20 @@ users.forEach(u => {
         row.innerHTML = `<td>` +u.loginName+  `</td>
         <td>`+ u.userName + `</td>
         <td>`+ u.address +`</td>
-        <td>`+ u.telephone +`</td>`
+        <td>`+ u.telephone +`</td>
+        <td><input onclick="blockUser(this)" type="checkbox" class="blockUser" id="`+u.loginName+`" /></td>`
         // 4. Thêm dòng vào bảng
         bodytableUser.appendChild(row);
     }
 });
 
+function blockUser(u){
+    users.forEach(user => {
+        if(user.loginName == u.id) user.block = 1;
+    })
+    localStorage.setItem('users', JSON.stringify(users));
+    alert("Bạn đã khóa tài khoản "+u.id);
+}
 
 // ẩn hiện bảng user và product
 let currentPage = 1;

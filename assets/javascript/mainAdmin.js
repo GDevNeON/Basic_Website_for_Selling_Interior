@@ -108,6 +108,9 @@ window.addEventListener('resize', setZIndexBasedOnWidth);
 //click Thêm sản phẩm
 document.getElementById('add-product').addEventListener('click', function (event) {
     event.preventDefault();
+    var rowDeleImg = document.getElementsByClassName('rowDeleteImg')[0];
+
+    rowDeleImg.style.display = 'none'
     //page đang hiển thị
     var pageCurrent = document.getElementsByClassName('active')[0];
     //page muốn hiển thị
