@@ -444,6 +444,19 @@
 
 /* fix from lâm */
 @media screen and (max-width: 400px) {
+    .filter{
+        padding: 2px;
+    }
+    #priceStart, #priceEnd{
+        width: 90px;
+        padding: 5px 2px;
+    }
+    .page-content{
+        width: 100%;
+    }
+    .toolbox-container{
+        width: 100%;
+    }
     #detail-product-vettt{
         width: 90%;
         left: 5%;
@@ -455,7 +468,7 @@
         padding: 0;
         margin: 20px auto;
         display: grid;
-        grid-template-columns: 150px 150px ;
+        grid-template-columns: 180px 180px ;
         gap: 10px;
     }
 
