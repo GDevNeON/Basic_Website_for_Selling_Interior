@@ -15,10 +15,12 @@ function displayDetail() {
     //HEADER BAO CẢ DANH SÁCH
     ds_header.className = "danhsach-header";
     ds_header.innerHTML = `
-        <li class="idBill-header" style="width:150px;">ID</li>
-        <li class="user-header" style="width:200px;">Khách hàng</li>
-        <li class="date-header" style="width:100px;">Ngày lập</li>
-        <li class="checkByAdmin-header" style="width:80px; text-align:center;">Trạng thái</li>
+        <li class="idBill-header" style="width:10%;">ID</li>
+        <li class="user-header" style="width:20%;">Khách hàng</li>
+        <li class="date-header" style="width:20%;">Ngày lập</li>
+        <li class="sdt-header" style="width:18%;">SĐT</li>
+        <li class="address-header" style="width:15%;">Địa chỉ</li>
+        <li class="checkByAdmin-header" style="width:70px; text-align:center;">Trạng thái</li>
         <li style="width:100px; float:right; text-align:right;"></li>
     `;
     danhsach.appendChild(ds_header);
@@ -32,10 +34,12 @@ function displayDetail() {
         ds_item.className = "danhsach-item";
         ds_item.style.display = 'block'
         ds_item.innerHTML = `
-            <li class="idBill" style="width:150px;">${bills[i].idBill}</li>
-            <li class="user" style="width:200px;">${bills[i].user}</li>
-            <li class="date" style="width:100px;">${bills[i].date}</li>
-            <li class="checkByAdmin" style="width:80px; text-align:center;">
+            <li class="idBill" style="width:10%;">${bills[i].idBill}</li>
+            <li class="user" style="width:20%;">${bills[i].user}</li>
+            <li class="date" style="width:20%;">${bills[i].date}</li>
+            <li class="sdt" style="width:18%;">${bills[i].sdt}</li>
+            <li class="address" style="width:15%;">${bills[i].address}</li>
+            <li class="checkByAdmin" style="width:70px; text-align:center;">
                 <img onclick = "checkByAdminFunc(this)" class="imgTrangThai" name="${bills[i].idBill}" id="imgTrangThai${i + 1}" src="assets/icon/check.png" alt="" width="16" height="16" data-code="1"/>
             </li>
             <li style="width:100px; float:right; text-align:right;">
@@ -68,10 +72,10 @@ function displayDetail() {
         const ds_subitem_header = document.createElement("ul");
         ds_subitem_header.className = "danhsach-subitem-header";
         ds_subitem_header.innerHTML = `
-            <li class="productName-header" style="width:200px;">Tên sản phẩm</li>
-            <li class="quantityPro-header" style="width:100px;">Số lượng</li>
-            <li class="pricePro-header" style="width:130px;">Đơn giá</li>
-            <li class="sumPrice-header" style="width:200px;">Tổng tiền</li>
+            <li class="productName-header" style="width:25%;">Tên sản phẩm</li>
+            <li class="quantityPro-header" style="width:25%;">Số lượng</li>
+            <li class="pricePro-header" style="width:25%;">Đơn giá</li>
+            <li class="sumPrice-header" style="width:25%;">Tổng tiền</li>
         `;
         ds_subitem.appendChild(ds_subitem_header);
 
@@ -81,10 +85,10 @@ function displayDetail() {
                 const ds_subitem_item = document.createElement("div");
                 ds_subitem_item.className = "danhsach-subitem-item"
                 ds_subitem_item.innerHTML = `
-                    <li class="productName" style="width:200px;">${bills[i].detailBill[j].productName}</li>
-                    <li class="quantityPro" style="width:100px;">${bills[i].detailBill[j].qualityPro}</li>
-                    <li class="pricePro" style="width:130px;">${bills[i].detailBill[j].pricePro}đ</li>
-                    <li class="sumPrice" style="width:200px;">${sumPrice}đ</li>
+                    <li class="productName" style="width:25%;">${bills[i].detailBill[j].productName}</li>
+                    <li class="quantityPro" style="width:25%;">${bills[i].detailBill[j].qualityPro}</li>
+                    <li class="pricePro" style="width:25%;">${bills[i].detailBill[j].pricePro}đ</li>
+                    <li class="sumPrice" style="width:25%;">${sumPrice}đ</li>
                 `;
                 ds_subitem.appendChild(ds_subitem_item);
         }
@@ -128,15 +132,18 @@ function filterData() {
         const itemElement = document.getElementsByClassName('danhsach-item')[i];
         const itemElement2 = document.getElementsByClassName('danhsach-subitem')[i];
 
+        const startDate = new Date(startDay.toDateString());
+        const endDate = new Date(endDay.toDateString());
+        const orderDateNoTime = new Date(orderDate.toDateString());
         console.log(orderDate)
         console.log(startDay)
         console.log(endDay)
         //Ẩn hiện danh sách trong 1 khoảng thời gian
-        if (orderDate >= startDay && orderDate <= endDay) {
+        if (orderDateNoTime >= startDate && orderDateNoTime <= endDate) {
             itemElement.style.display = 'block'
         } else {
             itemElement.style.display = 'none'
-            //itemElement2.classList.remove('showOrder');
+            itemElement2.style.display = 'none' //dòng này tui thêm vào không là lỗi
         }
 
         if (orderDate >= startDay && orderDate <= endDay) {

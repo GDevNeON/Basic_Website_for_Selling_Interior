@@ -171,11 +171,13 @@
 	li.user-header,
 	li.date-header,
 	li.checkByAdmin-header,
+	li.sdt-header,
+	li.address-header,
 	li.idBill,
 	li.user,
 	li.date,
 	li.checkByAdmin {
-		width: 20% !important; 
+		width: 15% !important; 
 	}
 
 	li.idPro-header,
@@ -186,13 +188,39 @@
 	li.quantityPro,
 	li.pricePro-header,
 	li.pricePro {
-		width: 20% !important; 
+		width: 15% !important; 
 	}
 
 	li.sumPrice-header,
 	li.sumPrice {
 		width: 30% !important;
 		margin-left: 30px;
+	}
+}
+
+@media screen and (max-width: 986px) {
+	li.idBill-header,
+	li.user-header,
+	li.date-header,
+	li.checkByAdmin-header,
+	li.sdt-header,
+	li.address-header,
+	li.idBill,
+	li.user,
+	li.date,
+	li.checkByAdmin {
+		width: 15% !important; 
+	}
+
+	li.idPro-header,
+	li.idPro,
+	li.productName-header,
+	li.productName,
+	li.quantityPro-header,
+	li.quantityPro,
+	li.pricePro-header,
+	li.pricePro {
+		width: 15% !important; 
 	}
 }
 
@@ -212,5 +240,10 @@
 	li.date-header,
 	li.date {
 		width: 90px !important;
+	}
+
+	li.address-header,
+	li.address {
+		display: none !important;
 	}
 }

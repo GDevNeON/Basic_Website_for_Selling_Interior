@@ -68,7 +68,7 @@ function displayProducts() {
             <td><img src="${product.picture}" width="80" alt="Hình ảnh sản phẩm"></td>
             <td>${formatDate(new Date(product.latestDateSold))}</td>
             <td>${product.quantity}</td>
-            <td>${product.totalPrice}</td>`;
+            <td>${product.totalPrice.toLocaleString('vi-VN')}</td>`;
         bodyTableStatis.appendChild(row);
     });
 
@@ -76,6 +76,6 @@ function displayProducts() {
     const totalAmountRow = document.createElement('tr');
     totalAmountRow.innerHTML = `<td colspan="3"><strong>Tổng:</strong></td>
         <td style="color: red"><strong>${totalQuantity}</strong></td>
-        <td style="color: red"><strong>${totalAmount}</strong></td>`;
+        <td style="color: red"><strong>${totalAmount.toLocaleString('vi-VN')}</strong></td>`;
     bodyTableStatis.appendChild(totalAmountRow);
 }

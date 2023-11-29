@@ -159,6 +159,10 @@ users.forEach(u => {
         <td>`+ u.address +`</td>
         <td>`+ u.telephone +`</td>
         <td><input onclick="blockUser(this)" type="checkbox" class="blockUser" id="`+u.loginName+`" /></td>`
+        if(u.block==1){
+            var checkbox = row.querySelector('.blockUser');
+            checkbox.checked = true;
+        }
         // 4. Thêm dòng vào bảng
         bodytableUser.appendChild(row);
     }
@@ -166,10 +170,17 @@ users.forEach(u => {
 
 function blockUser(u){
     users.forEach(user => {
-        if(user.loginName == u.id) user.block = 1;
+        if(user.loginName == u.id) {
+            if(user.block == 0){
+                user.block = 1;
+                alert("Bạn đã khóa tài khoản "+u.id);
+            } else {
+                user.block = 0;
+                alert("Bạn đã mở khóa tài khoản "+u.id);
+            }
+        }
     })
     localStorage.setItem('users', JSON.stringify(users));
-    alert("Bạn đã khóa tài khoản "+u.id);
 }
 
 // ẩn hiện bảng user và product
@@ -235,58 +246,69 @@ document.getElementById('statisTable').addEventListener('click', function(e){
 })
 
 
-// phân trang 
-var itemsPerPage = document.getElementById('selectNumRow').value; // Số mục trên mỗi trang
+// phân trang
+var itemsPerPage = document.getElementById("selectNumRow").value; // Số mục trên mỗi trang
 
 function showPage(page) {
-    
-    for (let i = 0; i < rows.length; i++) {
+    let totalItems = rows.length;
+
+    // Kiểm tra nếu không đủ sản phẩm để hiển thị thanh phân trang
+    if (totalItems <= itemsPerPage) {
+        document.querySelector(".listPage").style.display = "none";
+        return;
+    } else {
+        document.querySelector(".listPage").style.display = "block";
+    }
+
+    for (let i = 0; i < totalItems; i++) {
         if (i < (page - 1) * itemsPerPage || i >= page * itemsPerPage) {
-            rows[i].style.display = 'none';
+            rows[i].style.display = "none";
         } else {
-            rows[i].style.display = '';
+            rows[i].style.display = "";
         }
     }
-    listPage()
+    listPage();
 }
 
-function listPage(){
+function listPage() {
     let count = Math.ceil(rows.length / itemsPerPage);
-    document.querySelector('.listPage').innerHTML = '';
+    document.querySelector(".listPage").innerHTML = "";
 
     console.log(rows.length);
     console.log(itemsPerPage);
-    if(currentPage != 1){
-        let prev = document.createElement('li');
-        prev.innerText = 'PREV';
-        prev.setAttribute('onclick', "changePage(" + (currentPage - 1) + ")");
-        document.querySelector('.listPage').appendChild(prev);
+    if (currentPage != 1) {
+        let prev = document.createElement("li");
+        prev.innerText = "PREV";
+        prev.setAttribute("onclick", "changePage(" + (currentPage - 1) + ")");
+        document.querySelector(".listPage").appendChild(prev);
     }
     console.log(count);
-    for(i = 1; i <= count; i++){
-        let newPage = document.createElement('li');
+    for (i = 1; i <= count; i++) {
+        let newPage = document.createElement("li");
         newPage.innerText = i;
-        if(i == currentPage){
-            newPage.classList.add('active');
+        if (i == currentPage) {
+            newPage.classList.add("active");
         }
-            newPage.setAttribute('onclick', "changePage(" + i + ")");
-            document.querySelector('.listPage').appendChild(newPage);
+        newPage.setAttribute("onclick", "changePage(" + i + ")");
+        document.querySelector(".listPage").appendChild(newPage);
     }
 
-    if(currentPage != count){
-        let next = document.createElement('li');
-        next.innerHTML = 'NEXT';
-        next.setAttribute('onclick', "changePage(" + (currentPage + 1) + ")");
-        document.querySelector('.listPage').appendChild(next);
+    if (currentPage != count) {
+        let next = document.createElement("li");
+        next.innerHTML = "NEXT";
+        next.setAttribute("onclick", "changePage(" + (currentPage + 1) + ")");
+        document.querySelector(".listPage").appendChild(next);
     }
 }
-function changePage(i){
+function changePage(i) {
     currentPage = i;
     showPage(currentPage);
 }
-document.getElementsByClassName('contain_select_numRow')[0].addEventListener('change', () => {
-    itemsPerPage = document.getElementById('selectNumRow').value;
-    showPage(currentPage);
-})
+document
+    .getElementsByClassName("contain_select_numRow")[0]
+    .addEventListener("change", () => {
+        itemsPerPage = document.getElementById("selectNumRow").value;
+        showPage(currentPage);
+    });
 // Hiển thị trang đầu tiên khi tải trang
 showPage(currentPage);

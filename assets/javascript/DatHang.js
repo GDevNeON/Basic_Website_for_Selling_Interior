@@ -197,7 +197,7 @@ if (login.isLogin === 1) {
         bill.detailBill.forEach(function(product) {
             var productRow = document.createElement("tr");
             productRow.innerHTML = `
-        <td>${product.idPro}</td>
+        <td>${product.productName}</td>
         <td>${product.qualityPro}</td>
         <td>${product.pricePro.toLocaleString("vi-VN")}</td>
       `;
