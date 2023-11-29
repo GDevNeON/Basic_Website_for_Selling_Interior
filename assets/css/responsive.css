@@ -441,3 +441,74 @@
     }
 
 }
+
+/* fix from lâm */
+@media screen and (max-width: 400px) {
+    #detail-product-vettt{
+        width: 90%;
+        left: 5%;
+    }
+    #detail-product-vettt .product{
+        margin: 2.2rem;
+    }
+    .product-list, .contaner-product {
+        padding: 0;
+        margin: 20px auto;
+        display: grid;
+        grid-template-columns: 150px 150px ;
+        gap: 10px;
+    }
+
+    .box-product{
+        position: relative;
+    }
+
+    .box-product .btnDetail {
+        position: absolute;
+        top: 175px;
+        left: 2px;
+    }
+
+    .add-bag{
+        position: absolute;
+        top: 140px;
+        left: 86px;
+    }
+
+    .logo img{
+        width: 120px;
+    }
+
+    .masonry-item__inner{
+        margin-top: -171px;
+        margin-left: 20px;
+    }
+
+    .masonry-mobile{
+        margin-top: 75px;
+    }
+
+    .service {
+        margin-top: 100px;
+    }
+
+    .service-item {
+        padding: 20px;
+    }
+
+
+
+    /* footer */
+    .footer-logo__title {
+        width: 200px;
+    }
+
+    .footer-form__input{
+        width: 150px;
+    }
+
+    .footer-btn__submit{
+        width: 100px;
+    }
+
+}
