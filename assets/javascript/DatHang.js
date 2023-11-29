@@ -212,12 +212,15 @@ if (login.isLogin === 1) {
   }
 
   function closeContainer(clickedElement) {
-    var containerBillProduct = clickedElement.closest(".containerBillProduct");
+    var containerBillProducts = document.querySelectorAll(
+      ".containerBillProduct"
+    );
 
-    if (containerBillProduct) {
+    containerBillProducts.forEach(function (containerBillProduct) {
       containerBillProduct.style.display = "none";
-      nenDen.style = "display: block;";
-    }
+    });
+
+    nenDen.style.display = "none";
   }
 
   nenDen.addEventListener("click", function (event) {
