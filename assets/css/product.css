@@ -53,6 +53,7 @@ body .shopBag .productBag .show_product .yr_product {
 }
 body .shopBag .productBag .show_product .yr_product .decide_checkProduct {
   display: flex;
+  width: 50%;
 }
 body .shopBag .productBag .show_product .yr_product .check_product {
   display: flex;
@@ -120,16 +121,7 @@ body
   text-decoration: none;
   color: black;
 }
-body
-  .shopBag
-  .productBag
-  .show_product
-  .yr_product
-  .content_package
-  .icon_bag
-  .icon_heart {
-  margin-right: 15px;
-}
+
 body .shopBag .productBag .show_product .yr_product .price_product {
   width: 25%;
   text-align: right;
@@ -147,7 +139,7 @@ body .shopBag .productBag .show_product .yr_product .decideBag {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 30%;
+  width: 25%;
 }
 body
   .shopBag
@@ -169,10 +161,10 @@ body
   .decideBag
   .quantity_product
   input {
-  width: 40px;
+  width: 39px;
   height: 30px;
   text-align: center;
-  margin: 10px;
+  margin: 10px 10px 10px 28px;
   font-weight: 600;
 }
 body .shopBag .productBag .show_product .yr_product .decideBag .icon_bag {
@@ -234,6 +226,23 @@ body .shopBag .yr_total .yr_bill .bnt_total button {
   cursor: pointer;
   font-size: 17px;
   color: white;
+}
+@media screen and (max-width: 821px) and (min-width: 711px) {
+  body .shopBag .productBag .show_product .yr_product .decide_checkProduct {
+    width: 50%;
+  }
+  body .shopBag .productBag .show_product .yr_product .price_product {
+    width: 32%;
+  }
+  body .shopBag .productBag .show_product .yr_product .decideBag {
+    width: 18%;
+  }
+  .donhangItem {
+    font-size: 13px;
+  }
+  body .shopBag .productBag .show_product .yr_product .decideBag .icon_bag {
+    margin-bottom: -3px;
+  }
 }
 
 @media screen and (max-width: 710px) {
@@ -298,9 +307,7 @@ body .shopBag .yr_total .yr_bill .bnt_total button {
     justify-content: center;
     line-height: 3.2rem;
   }
-  body .shopBag .productBag .show_product .yr_product .decideBag .icon_bag {
-    flex-wrap: wrap;
-  }
+
   body .shopBag .yr_total .yr_bill .total_bill span,
   body .shopBag .yr_total .yr_bill .bnt_total button {
     font-size: 11px;
@@ -348,7 +355,8 @@ body .shopBag .yr_total .yr_bill .bnt_total button {
     margin: 0;
   }
 
-  .shopBag
+  body
+    .shopBag
     .productBag
     .show_product
     .yr_product
@@ -359,34 +367,39 @@ body .shopBag .yr_total .yr_bill .bnt_total button {
     font-weight: 600;
   }
 
-  .shopBag
+  body
+    .shopBag
     .productBag
     .show_product
     .yr_product
     .price_product
     .p_price_product {
-    font-size: 13px;
+    font-size: 12px;
   }
   body .shopBag .productBag .show_product .yr_product .price_product span {
     font-size: 9px;
   }
   body .shopBag .productBag .show_product .yr_product .price_product {
     margin: 10px 70px 0 10px;
-    width: 20%;
+    width: 24%;
     margin: 0;
   }
   body .shopBag .productBag .show_product .yr_product .decideBag {
-    margin: 0;
     padding: 0;
     display: flex;
     flex-wrap: nowrap;
-    width: 20%;
+    width: 21%;
+    margin-top: 16px;
+    align-items: center;
+  }
+
+  body .shopBag .productBag .show_product .yr_product .decideBag .icon_bag {
+    margin-bottom: 8px;
   }
 
   .shopBag .productBag .show_product .yr_product .decideBag .quantity_product {
     width: 50%;
-    margin-right: 20px;
-    margin-left: 30px;
+    margin: 0 8px 0 15px;
   }
   body
     .shopBag
@@ -400,10 +413,7 @@ body .shopBag .yr_total .yr_bill .bnt_total button {
     width: 30px;
     height: 20px;
   }
-  body .shopBag .productBag .show_product .yr_product .decideBag .icon_bag {
-    flex-wrap: wrap;
-    width: 50%;
-  }
+
   body
     .shopBag
     .productBag
