@@ -152,12 +152,16 @@ if (!localStorage.getItem('bills')) {
             idBill: "001",
             user: "Duy Lâm",
             date: "2023-11-22",
+            sdt: "0976077913",
+            address: "273 An Dương Vương",
             detailBill: newProducts
         },
         {
             idBill: "002",
             user: "Nam Khương",
             date: "2023-11-10",
+            sdt: "0913433567",
+            address: "99 Hồng Bàng",
             detailBill: newProducts2
         },
 
