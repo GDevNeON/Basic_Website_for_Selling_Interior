@@ -78,24 +78,35 @@ if (login.isLogin === 1) {
 
       bills.push(newBill);
       localStorage.setItem("bills", JSON.stringify(bills));
+      updateTotalAmount();
+
       alert("Đặt hàng thành công");
       updateUIWithNewOrder(newBill);
     } else alert("Vui lòng chọn ít nhất 1 sản phẩm");
   });
 
   function updateTotalAmount() {
-    var totalAmount = bills.reduce((total, bill) => {
-      return (
-        total +
-        bill.detailBill.reduce((subtotal, product) => {
-          return subtotal + product.qualityPro * product.pricePro;
-        }, 0)
-      );
-    }, 0);
+    var filteredBills = bills.filter((bill) => bill.user === login.nameLogin);
 
-    var formattedAmount = totalAmount.toLocaleString("vi-VN"); // Format with Vietnamese locale
+    if (filteredBills.length > 0) {
+      var totalAmount = filteredBills.reduce((total, bill) => {
+        if (bill.detailBill && bill.detailBill.length > 0) {
+          return (
+            total +
+            bill.detailBill.reduce((subtotal, product) => {
+              const quality = parseFloat(product.qualityPro) || 0;
+              const price = parseFloat(product.pricePro) || 0;
+              return subtotal + quality * price;
+            }, 0)
+          );
+        } else {
+          return total;
+        }
+      }, 0);
 
-    document.getElementById("money").textContent = formattedAmount + " đ";
+      var formattedAmount = totalAmount.toLocaleString("vi-VN");
+      document.getElementById("money").textContent = formattedAmount + " đ";
+    }
   }
 
   updateTotalAmount();
@@ -111,7 +122,6 @@ if (login.isLogin === 1) {
         <a href="#!" class="donhangItem"  onclick="showDonHang(this)">Đơn hàng ${donHangCounter}</a>
       </div>
     `;
-
     containerDonhang.appendChild(donHang);
   }
 
@@ -119,21 +129,30 @@ if (login.isLogin === 1) {
 
   function displayOrdersFromLocalStorage() {
     containerDonhang.innerHTML = "";
-    bills.forEach(function (bill, index) {
-      var donHang = document.createElement("div");
-      var orderStatus = bill.checkByAdmin === 1 ? "Đã xử lý" : "Chưa xử lý";
 
-      donHang.innerHTML = `
-        <div>
-          <div class="idDonhang" style="display: none;">${bill.idBill}</div>
-          <a href="#!" class="donhangItem" onclick="showDonHang(this)">
-            Đơn hàng ${index + 1} » ${orderStatus}
-          </a>
-        </div>
-      `;
-      containerDonhang.appendChild(donHang);
+    // Counter for the displayed orders
+    var displayedOrderCounter = 0;
+
+    bills.forEach(function (bill) {
+      if (login.nameLogin == bill.user) {
+        var donHang = document.createElement("div");
+        var orderStatus = bill.checkByAdmin === 1 ? "Đã xử lý" : "Chưa xử lý";
+
+        displayedOrderCounter++;
+
+        donHang.innerHTML = `
+          <div>
+            <div class="idDonhang" style="display: none;">${bill.idBill}</div>
+            <a href="#!" class="donhangItem" onclick="showDonHang(this)">
+              Đơn hàng ${displayedOrderCounter} » ${orderStatus}
+            </a>
+          </div>
+        `;
+        containerDonhang.appendChild(donHang);
+      }
     });
   }
+
   containerDonhang.style.display = "none";
   var close_button = document.getElementsByClassName("close-button")[0];
 
@@ -191,9 +210,9 @@ if (login.isLogin === 1) {
 
     var tbody = billHTML.querySelector("tbody");
 
-        bill.detailBill.forEach(function(product) {
-            var productRow = document.createElement("tr");
-            productRow.innerHTML = `
+    bill.detailBill.forEach(function (product) {
+      var productRow = document.createElement("tr");
+      productRow.innerHTML = `
         <td>${product.productName}</td>
         <td>${product.qualityPro}</td>
         <td>${product.pricePro.toLocaleString("vi-VN")}</td>
