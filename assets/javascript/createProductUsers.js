@@ -99,11 +99,11 @@ if (localStorage.getItem('firstVisit') === null) {
         },
         {
             idProduct: '002',
-            productName: 'Armchair Xoay Walnut',
+            productName: 'Armchair Walnut',
             category: 'phong_khach',
             priceProduct: 5000000,
             detailProduct: 'Armchair walnut đơn giản quý phái',
-            imageProduct: './assets/image/5.phong-khach-maxine-768x511.jpg'
+            imageProduct: './assets/image/armchair4.jpg'
         },
         {
             idProduct: '003',
@@ -111,7 +111,7 @@ if (localStorage.getItem('firstVisit') === null) {
             category: 'phong_khach',
             priceProduct: 15000000,
             detailProduct: 'Armchair ARCH với kiểu dáng sang trọng, khung kim loại chắc chắn với những đường nét tinh tế',
-            imageProduct: './assets/image/5.phong-khach-hien-dai-roma5-768x511.jpg'
+            imageProduct: './assets/image/armchair3.jpg'
         },
         {
             idProduct: '004',
@@ -302,7 +302,7 @@ if (localStorage.getItem('firstVisit') === null) {
             category: 'phong_khach',
             priceProduct: 20000000,
             detailProduct: 'Sofa Chestkelly mang phong cách cổ điển',
-            imageProduct: './assets/image/8.sofa-phong-cach-co-dien-768x511.jpg'
+            imageProduct: './assets/image/sofa-chestkelly.jpg'
         },
         {
             idProduct: '104',
@@ -310,7 +310,7 @@ if (localStorage.getItem('firstVisit') === null) {
             category: 'phong_khach',
             priceProduct: 13000000,
             detailProduct: 'Sofa Maxine là 1 lựa chọn sáng giá cho không gian phòng khách sang trọng, tinh tế',
-            imageProduct: './assets/image/san-pham-moi-2021-5.jpg'
+            imageProduct: './assets/image/5.phong-khach-maxine-768x511.jpg'
         },
         {
             idProduct: '105',

@@ -1,5 +1,5 @@
 :root{
-    --primary-color: #1e3d7e;
+    --primary-color: #FEF3EE;
     --primary-bg-color: #FF5F6D;
     --my-gradient: linear-gradient(90deg, #FF5F6D 0%, #FFC371 100%);
 }
@@ -87,7 +87,7 @@ input:focus{
 }
 #content{
     width: 80%;
-    background-color: rgba(98, 58, 162, 0.15);
+    background-color: #FEF3EE;
 }
 .header{
     width: 100%;
@@ -445,4 +445,18 @@ button{
 #deleteImg{
     width: 20px;
     height: 12px;
+}
+.table-product-name{
+    width: 300px;
+}
+
+td img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+button img{
+    width: 15px;
+    height: auto;
 }

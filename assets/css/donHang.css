@@ -129,7 +129,12 @@ body {
 .donhangItem:hover::after {
   color: blue;
 }
-
+@media screen and (max-width: 1025px) and (min-width: 822px) {
+  .containerBillProduct {
+    top: 11%;
+    left: 15%;
+  }
+}
 @media screen and (max-width: 821px) {
   .containerBillProduct {
     top: 12%;
@@ -160,9 +165,9 @@ body {
   .containerBillProduct {
     z-index: 21;
     position: fixed;
-    top: 92px;
+    top: 35%;
     width: 280px;
-    left: 114px;
+    left: 21%;
     max-height: 300px;
     overflow-y: auto;
   }

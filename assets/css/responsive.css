@@ -13,7 +13,7 @@
 
 /* tablet & mobile */ 
 /*  */
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 1366.98px) {
     .container{
         overflow: hidden;
         width: 780px;
@@ -119,7 +119,10 @@
 }
 
 /* tablet */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1366.98px) {
+    .service-item__desc{
+        display: none;
+    }
     .product-form .btn-cart{
         max-width: 160px;
         margin-left: 90px;
@@ -223,7 +226,7 @@
 }
 
 /* mobile */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767.98px) {
     html {
         font-size: 62.5%;
     }

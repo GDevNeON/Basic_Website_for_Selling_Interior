@@ -8,7 +8,6 @@ function formatDate(date) {
 
 // Bắt sự kiện click của nút "Thống kê"
 document.getElementById('filterButton').addEventListener('click', function () {
-    // Gọi hàm thực hiện việc lọc và hiển thị sản phẩm
     displayProducts();
 });
 
@@ -42,6 +41,7 @@ function displayProducts() {
 
                     // Cập nhật tổng giá tiền
                     totalAmount += product.pricePro * parseInt(product.qualityPro);
+                    totalQuantity += parseInt(product.qualityPro);
                 } else {
                     // Nếu sản phẩm chưa tồn tại, thêm mới vào danh sách
                     productTotals[product.productName] = {
@@ -68,7 +68,7 @@ function displayProducts() {
             <td><img src="${product.picture}" width="80" alt="Hình ảnh sản phẩm"></td>
             <td>${formatDate(new Date(product.latestDateSold))}</td>
             <td>${product.quantity}</td>
-            <td>${product.totalPrice.toLocaleString('vi-VN')}</td>`;
+            <td>${product.totalPrice} đ</td>`;
         bodyTableStatis.appendChild(row);
     });
 
@@ -76,6 +76,92 @@ function displayProducts() {
     const totalAmountRow = document.createElement('tr');
     totalAmountRow.innerHTML = `<td colspan="3"><strong>Tổng:</strong></td>
         <td style="color: red"><strong>${totalQuantity}</strong></td>
-        <td style="color: red"><strong>${totalAmount.toLocaleString('vi-VN')}</strong></td>`;
+        <td style="color: red"><strong>${totalAmount} đ</strong></td>`;
     bodyTableStatis.appendChild(totalAmountRow);
+}
+
+// Kiểm tra xem localStorage đã có dữ liệu hay chưa
+if (!localStorage.getItem('bills')) {
+    // Thêm dữ liệu vào localStorage nếu chưa có
+    // Tạo một mẫu dữ liệu sản phẩm
+    var newProducts = [
+        {
+            productName: "Sản phẩm 1",
+            picture: "https://resize.sudospaces.com/noithattoancau/2021/07/w400/sofa-2021-2.jpg",
+            dateSold: "2023-11-25", 
+            category: 'phong_khach',
+            qualityPro: 5,
+            pricePro: 20
+        },
+        {
+            productName: "Sản phẩm 2",
+            picture: "https://resize.sudospaces.com/noithattoancau/2021/07/w400/sofa-2021-21.jpg",
+            dateSold: "2023-11-10", 
+            category: 'phong_ngu',
+            qualityPro: 3, 
+            pricePro: 15 
+        },
+        {
+            productName: "Sản phẩm 2",
+            picture: "https://resize.sudospaces.com/noithattoancau/2021/07/w400/sofa-2021-21.jpg",
+            dateSold: "2023-11-20", 
+            category: 'phong_ngu',
+            qualityPro: 3, 
+            pricePro: 15 
+        },
+        // Thêm các sản phẩm khác nếu cần
+    ];
+    var newProducts2 = [
+        {
+            productName: "Sản phẩm 1",
+            picture: "https://resize.sudospaces.com/noithattoancau/2021/07/w400/sofa-2021-2.jpg",
+            dateSold: "2023-10-25", 
+            category: 'phong_khach',
+            qualityPro: 5,
+            pricePro: 20
+        },
+        {
+            productName: "Sản phẩm 2",
+            picture: "https://resize.sudospaces.com/noithattoancau/2021/07/w400/sofa-2021-21.jpg",
+            dateSold: "2023-11-15", 
+            category: 'phong_ngu',
+            qualityPro: 3, 
+            pricePro: 15 
+        },
+        {
+            productName: "Sản phẩm 2",
+            picture: "https://resize.sudospaces.com/noithattoancau/2021/07/w400/sofa-2021-21.jpg",
+            dateSold: "2023-11-27", 
+            category: 'phong_ngu',
+            qualityPro: 3, 
+            pricePro: 15 
+        },
+        {
+            productName: "Sản phẩm 3",
+            picture: "https://resize.sudospaces.com/noithattoancau/2021/07/w400/sofa-2021-21.jpg",
+            dateSold: "2023-11-11", 
+            category: 'phong_ngu',
+            qualityPro: 6, 
+            pricePro: 15 
+        },
+        // Thêm các sản phẩm khác nếu cần
+    ];
+
+    var existingData = [
+        {
+            idBill: "001",
+            user: "Duy Lâm",
+            date: "2023-11-22",
+            detailBill: newProducts
+        },
+        {
+            idBill: "002",
+            user: "Nam Khương",
+            date: "2023-11-10",
+            detailBill: newProducts2
+        },
+
+    ];
+
+    localStorage.setItem('bills', JSON.stringify(existingData));
 }

@@ -4,7 +4,7 @@ const bodytable = document.querySelector('.bodyTableProduct');
 products.forEach(product => {
   const row = document.createElement('tr');
   row.classList.add('row-product-admin')
-  row.innerHTML = `<td>`+ product.productName + `</td>
+  row.innerHTML = `<td class = "table-product-name">`+ product.productName + `</td>
   <td><img src="`+ product.imageProduct +`" width="80" alt="Hình ảnh sản phẩm"></td>
   <td>`+ product.priceProduct.toLocaleString('vi-VN') +`</td>
   <td>
@@ -230,7 +230,6 @@ document.getElementById('detailTable').addEventListener('click', function(e){
     detailTable.style.display = 'block';
     numRow.style.display = 'none';
     listPaging.style.display = 'none';
-    showPage(currentPage);
 })
 document.getElementById('statisTable').addEventListener('click', function(e){
     proTable.style.display = 'none';
@@ -238,7 +237,7 @@ document.getElementById('statisTable').addEventListener('click', function(e){
     userTable.style.display = 'none';
     statisTable.style.display = 'block';
     detailTable.style.display = 'none';
-    numRow.style.display = 'block';
+    numRow.style.display = 'none';
     listPaging.style.display = 'block';
     table = document.getElementsByClassName('tableStatis')[0];
     rows = table.getElementsByClassName('bodyTableStatis')[0].getElementsByTagName('tr');
