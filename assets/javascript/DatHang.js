@@ -212,19 +212,20 @@ if (login.isLogin === 1) {
   }
 
   function closeContainer(clickedElement) {
-    var containerBillProduct = clickedElement.closest(".containerBillProduct");
-
-    if (containerBillProduct) {
+    var containerBillProducts = document.querySelectorAll(
+      ".containerBillProduct"
+    );
+    containerBillProducts.forEach(function (containerBillProduct) {
       containerBillProduct.style.display = "none";
-      nenDen.style = "display: block;";
-    }
+    });
+
+    nenDen.style.display = "none";
   }
 
   nenDen.addEventListener("click", function (event) {
     var containerBillProducts = document.querySelectorAll(
       ".containerBillProduct"
     );
-
     containerBillProducts.forEach(function (containerBillProduct) {
       containerBillProduct.style.display = "none";
     });
