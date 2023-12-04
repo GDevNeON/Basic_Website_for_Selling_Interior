@@ -114,13 +114,13 @@
   .footer-middle__contact {
     width: 50vh;
   }
-  .toolbox {
-    margin: 0;
-  }
 }
 
 /* tablet */
 @media screen and (min-width: 768px) and (max-width: 1366.98px) {
+  .toolbox {
+    margin: 0;
+  }
   .service-item__desc {
     display: none;
   }
@@ -225,6 +225,9 @@
 
 /* mobile */
 @media screen and (max-width: 767.98px) {
+  .toolbox {
+    margin: 0;
+  }
   html {
     font-size: 62.5%;
   }
