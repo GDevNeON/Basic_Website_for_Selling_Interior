@@ -43,6 +43,10 @@ var giohang = document.getElementById('containerBag');
 // tìm kiếm theo tên
 
   document.getElementsByClassName('a-search')[1].addEventListener('click', function(){
+    
+    for(var j=0; j<categoryMenu.length; j++){categoryMenu[j].style ="color: black;"}
+    tilteTopBody.textContent = 'Nội thất Ventus';
+
     productContainer.innerHTML = '';
     var nameWantSearch = document.getElementsByClassName('searching')[1].value;
     var priceStart = document.getElementById('priceStart').value;
@@ -52,11 +56,14 @@ var giohang = document.getElementById('containerBag');
       var price = p.priceProduct;
       var nameProLowerCase = p.productName.toLowerCase();
       var nameSearchLowerCase = nameWantSearch.toLowerCase();
-        if(categoryNow == ''){
-          if(nameProLowerCase.indexOf(nameSearchLowerCase) !== -1 && price >= priceStart && price <= priceEnd){
-            mangTimKiem.push(p);
-          }
-        } else if(nameProLowerCase.indexOf(nameSearchLowerCase) !== -1 && price >= priceStart && price <= priceEnd && p.category == categoryNow){
+        // if(categoryNow == ''){
+        //   if(nameProLowerCase.indexOf(nameSearchLowerCase) !== -1 && price >= priceStart && price <= priceEnd){
+        //     mangTimKiem.push(p);
+        //   }
+        // } else if(nameProLowerCase.indexOf(nameSearchLowerCase) !== -1 && price >= priceStart && price <= priceEnd && p.category == categoryNow){
+        //   mangTimKiem.push(p);
+        // }
+        if(nameProLowerCase.indexOf(nameSearchLowerCase) !== -1 && price >= priceStart && price <= priceEnd){
           mangTimKiem.push(p);
         }
     })
@@ -65,7 +72,12 @@ var giohang = document.getElementById('containerBag');
     listPage()
     check=1;
   })
+  // search mobile
   document.getElementsByClassName('a-search')[0].addEventListener('click', function(){
+
+  for(var j=0; j<categoryMenu.length; j++){categoryMenu[j].style ="color: black;"}
+  tilteTopBody.textContent = 'Nội thất Ventus';
+
   productContainer.innerHTML = '';
   var nameWantSearch = document.getElementsByClassName('searching')[0].value;
   var priceStart = document.getElementById('priceStart').value;
@@ -75,13 +87,16 @@ var giohang = document.getElementById('containerBag');
     var price = p.priceProduct;
     var nameProLowerCase = p.productName.toLowerCase();
     var nameSearchLowerCase = nameWantSearch.toLowerCase();
-      if(categoryNow == ''){
+      // if(categoryNow == ''){
+        //   if(nameProLowerCase.indexOf(nameSearchLowerCase) !== -1 && price >= priceStart && price <= priceEnd){
+        //     mangTimKiem.push(p);
+        //   }
+        // } else if(nameProLowerCase.indexOf(nameSearchLowerCase) !== -1 && price >= priceStart && price <= priceEnd && p.category == categoryNow){
+        //   mangTimKiem.push(p);
+        // }
         if(nameProLowerCase.indexOf(nameSearchLowerCase) !== -1 && price >= priceStart && price <= priceEnd){
           mangTimKiem.push(p);
         }
-      } else if(nameProLowerCase.indexOf(nameSearchLowerCase) !== -1 && price >= priceStart && price <= priceEnd && p.category == categoryNow){
-        mangTimKiem.push(p);
-      }
   })
   loadProduct(mangTimKiem)
   loadItem()
@@ -89,20 +104,41 @@ var giohang = document.getElementById('containerBag');
   check=1;
 })
 
-// lọc theo khoảng giá
+
+// ẩn hiện lọc nâng cao
+var btnLocNangCao = document.getElementsByClassName('btn_search_nangCao')[0];
+var divToolbox = document.getElementsByClassName('toolbox-left')[0];
+btnLocNangCao.addEventListener('click', function(){
+  divToolbox.style.display = 'block';
+  btnLocNangCao.style.display = 'none'
+})
+
+// lọc nâng cao
 var filterBtn = document.getElementsByClassName('filter')[0];
 filterBtn.addEventListener('click', function(){
+
+  divToolbox.style.display = 'none';
+  btnLocNangCao.style.display = 'block'
+
+  for(var j=0; j<categoryMenu.length; j++){categoryMenu[j].style ="color: black;"}
+  tilteTopBody.textContent = 'Nội thất Ventus';
+
   productContainer.innerHTML = '';
   var priceStart = document.getElementById('priceStart').value;
   var priceEnd = document.getElementById('priceEnd').value;
+  var tuKhoa = document.getElementById('searchText_NangCao').value;
+  var loaiPhong = document.getElementById('category_NangCao').value;
   var mangTimKiem = [];
+  if(loaiPhong != 'null') categoryNow = loaiPhong; 
+  else categoryNow = '';
   products.forEach(p => {
     var price = p.priceProduct;
+    var nameProLowerCase = p.productName.toLowerCase();
     if(categoryNow == ''){
-      if(nameProLowerCase.indexOf(nameSearchLowerCase) !== -1 && price >= priceStart && price <= priceEnd){
+      if(nameProLowerCase.indexOf(tuKhoa) !== -1 && price >= priceStart && price <= priceEnd){
         mangTimKiem.push(p);
       }
-    } else if(price >= priceStart && price <= priceEnd && p.category == categoryNow){
+    } else if(price >= priceStart && price <= priceEnd && p.category == categoryNow && nameProLowerCase.indexOf(tuKhoa) !== -1){
         mangTimKiem.push(p);
       }
   })
@@ -141,6 +177,7 @@ function loadProduct(p){
               <span class="price">65.000.000 đ</span>
           </div>
           <div class="category" style="display: none;"></div>
+          <p class="textDetail_boxPro" style = "display:none;"></p>
       </div>
   </a>
 `;
@@ -149,6 +186,7 @@ function loadProduct(p){
   productItem.querySelector('.price').textContent = item.priceProduct.toLocaleString('vi-VN') + ' đ';
   productItem.querySelector('.idProduct').textContent = item.idProduct;
   productItem.querySelector('.category').textContent = item.category;
+  productItem.querySelector('.textDetail_boxPro').textContent = item.detailProduct;
   
   if(checkClickCategory == 1) productContainer = document.querySelector('.contaner-product');
   productContainer.appendChild(productItem);
@@ -208,6 +246,7 @@ var nenDen = document.getElementById('nen-den');
 var title = document.getElementById('product-detail-name');
 var priceDetail = document.getElementById('product-detail-price');
 var imageDetail = document.getElementById('product-detail-image');
+var textDetail = document.getElementById('detailTextProduct');
 function showDetailProduct(p){
   var productItem = p.parentNode;
   if(boxDetail.style.display == 'none'){
@@ -218,7 +257,8 @@ function showDetailProduct(p){
   priceDetail.textContent = productItem.querySelector('.price').textContent.toLocaleString('vi-VN');
   btnCart.dataset.id = productItem.querySelector('.idProduct').textContent;
   imageDetail.src = productItem.querySelector('img').src;
-  imageDetail.style.height = '400px'
+  imageDetail.style.height = '400px';
+  textDetail.textContent = productItem.querySelector('.textDetail_boxPro').textContent;
 }
 // nút X tên trang hiện chi tiết
 document.getElementById('x-button-detail').addEventListener('click', function(){

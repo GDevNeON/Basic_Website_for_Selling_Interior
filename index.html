@@ -747,9 +747,22 @@
         <div class="page-content">
             <div class="toolbox-container">
               <div class="toolbox">
-                <div class="toolbox-left">
-                  
-                  <label for="">Giá từ</label>
+                <button class="btn_search_nangCao">Tìm kiếm nâng cao</button>
+                <div class="toolbox-left" style="display: none;">
+                  <div class="">
+                    <label for="">Từ khóa</label>
+                    <input placeholder="  Tìm kiếm" style="height: 30px; margin-right: 8px;" type="text" name="" id="searchText_NangCao">
+                    <select name="" id="category_NangCao">
+                        <option value="null">Chọn phòng</option>
+                        <option value="phong_khach">Phòng khách</option>
+                        <option value="phong_ngu">Phòng ngủ</option>
+                        <option value="phong_an">Phòng ăn và bếp</option>
+                        <option value="phong_tam">Phòng tắm</option>
+                        <option value="phong_lamviec">Phòng làm việc</option>
+                    </select>
+                  </div>
+                  <div class="">
+                    <label for="">Giá từ</label>
                   <select name="" id="priceStart">
                     <option value="0">Chọn giá</option>
                     <option value="5000000">5 triệu</option>
@@ -772,6 +785,7 @@
                     />
                     LỌC
                   </a>
+                  </div>
                   <!-- <input type="text" id="filter_by_name"> -->
                 </div>
                 
@@ -820,6 +834,7 @@
                         <div class="sticky-sidebar" data-sticky-options="{'minWidth': 767}">
                             <!-- Product details -->
                             <h1 id="product-detail-name" class="product-name product-namedetail" style="height: auto">Ghế VIP</h1>
+                            <!-- <p id="detailTextProduct"></p> -->
                             <div class="product-price">
                                 <span class="price-new" id="product-detail-price">65.000.000 đ</span>
                             </div>
@@ -1078,10 +1093,10 @@
               <div class="yr_total">
                 
                 <div class="yr_bill">
-                  <div class="total_bill">
+                  <!-- <div class="total_bill">
                     <span>Tạm tính:</span>
                     <span id="money">0đ</span>
-                  </div>
+                  </div> -->
                   <div class="bnt_total">
                     <button id="btn_datHang">Đặt hàng</button>
                   </div>

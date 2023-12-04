@@ -100,7 +100,6 @@ creaUpBtn.addEventListener('click', function(e){
                 products.push(newProduct);
                 localStorage.setItem('products', JSON.stringify(products));
                 alert('Tạo mới thành công')
-            
             location.reload()
         }
     }
