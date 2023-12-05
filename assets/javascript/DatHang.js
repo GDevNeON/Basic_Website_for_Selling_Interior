@@ -136,7 +136,7 @@ if (login.isLogin === 1) {
     bills.forEach(function (bill) {
       if (login.nameLogin == bill.user) {
         var donHang = document.createElement("div");
-        var orderStatus = bill.checkByAdmin === 1 ? "Đã xử lý" : "Chưa xử lý";
+        var orderStatus = bill.checkByAdmin === 1 ? "Đang giao" : "Chờ xử lý";
 
         displayedOrderCounter++;
 
