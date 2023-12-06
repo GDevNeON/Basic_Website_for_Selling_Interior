@@ -39,6 +39,11 @@ function displayProducts() {
                     productTotals[product.productName].quantity += parseInt(product.qualityPro);
                     productTotals[product.productName].totalPrice += product.pricePro * parseInt(product.qualityPro);
 
+                    const existingProductDate = new Date(productTotals[product.productName].latestDateSold);
+                    if (productDate > existingProductDate) {
+                        productTotals[product.productName].latestDateSold = product.dateSold;
+                    }
+                    
                     // Cập nhật tổng giá tiền
                     totalAmount += product.pricePro * parseInt(product.qualityPro);
                     totalQuantity += parseInt(product.qualityPro);
