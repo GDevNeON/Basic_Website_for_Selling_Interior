@@ -202,15 +202,17 @@ function addProductToBag(productItem) {
   else {
   var product = productItem.querySelector('.idProduct');
   var idText;
+  // nếu ở trang chi tiết sp thì product bị null nên sẽ lấy id từ nút thêm giỏ hàng
   if(product == null) {
     idText = btnCart.dataset.id;
   }
+  // nếu ở trang khung sản phẩm
   else idText = product.textContent;
   var users = JSON.parse(localStorage.getItem('users'));
 
   console.log(product)
   users.forEach(u => {
-      var check=0;
+      var check=0; // flag check xem sản phẩm có trong giỏ hàng chưa
       if(login.nameLogin == u.loginName) {
           u.userBag.forEach(b => {
               if(b.idProduct == idText){
@@ -219,7 +221,7 @@ function addProductToBag(productItem) {
                   return;
               }
           })
-          if(check==0){
+          if(check==0){ // nếu chưa có trong giỏ hàng thì tạo mới
               var currentDate = new Date();
 
               var newBag = {
