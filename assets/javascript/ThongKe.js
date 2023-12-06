@@ -92,7 +92,7 @@ if (!localStorage.getItem('bills')) {
     var newProducts = [
         {
             productName: "Sản phẩm 1",
-            picture: "https://resize.sudospaces.com/noithattoancau/2021/07/w400/sofa-2021-2.jpg",
+            picture: "./assets/image/desk3.jpg",
             dateSold: "2023-11-25", 
             category: 'phong_khach',
             qualityPro: 5,
@@ -100,7 +100,7 @@ if (!localStorage.getItem('bills')) {
         },
         {
             productName: "Sản phẩm 2",
-            picture: "https://resize.sudospaces.com/noithattoancau/2021/07/w400/sofa-2021-21.jpg",
+            picture: "./assets/image/desk1.webp",
             dateSold: "2023-11-10", 
             category: 'phong_ngu',
             qualityPro: 3, 
@@ -108,7 +108,7 @@ if (!localStorage.getItem('bills')) {
         },
         {
             productName: "Sản phẩm 2",
-            picture: "https://resize.sudospaces.com/noithattoancau/2021/07/w400/sofa-2021-21.jpg",
+            picture: "./assets/image/bookself1.jpg",
             dateSold: "2023-11-20", 
             category: 'phong_ngu',
             qualityPro: 3, 
@@ -119,7 +119,7 @@ if (!localStorage.getItem('bills')) {
     var newProducts2 = [
         {
             productName: "Sản phẩm 1",
-            picture: "https://resize.sudospaces.com/noithattoancau/2021/07/w400/sofa-2021-2.jpg",
+            picture: "./assets/image/bookshelf4.jpg",
             dateSold: "2023-10-25", 
             category: 'phong_khach',
             qualityPro: 5,
@@ -127,7 +127,7 @@ if (!localStorage.getItem('bills')) {
         },
         {
             productName: "Sản phẩm 2",
-            picture: "https://resize.sudospaces.com/noithattoancau/2021/07/w400/sofa-2021-21.jpg",
+            picture: "./assets/image/1.ARMCHAIR-ROYAL-VAI-2041-9-1-768x495.jpg",
             dateSold: "2023-11-15", 
             category: 'phong_ngu',
             qualityPro: 3, 
@@ -135,7 +135,7 @@ if (!localStorage.getItem('bills')) {
         },
         {
             productName: "Sản phẩm 2",
-            picture: "https://resize.sudospaces.com/noithattoancau/2021/07/w400/sofa-2021-21.jpg",
+            picture: "./assets/image/armchair3.jpg",
             dateSold: "2023-11-27", 
             category: 'phong_ngu',
             qualityPro: 3, 
@@ -143,7 +143,7 @@ if (!localStorage.getItem('bills')) {
         },
         {
             productName: "Sản phẩm 3",
-            picture: "https://resize.sudospaces.com/noithattoancau/2021/07/w400/sofa-2021-21.jpg",
+            picture: "./assets/image/phong-an-001.jpg",
             dateSold: "2023-11-11", 
             category: 'phong_ngu',
             qualityPro: 6, 
