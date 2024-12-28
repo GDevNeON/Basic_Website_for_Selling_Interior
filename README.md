@@ -1,13 +1,21 @@
-# BASIC INTERIOR-SELLING WEBSITE
-### By SaiGon University Students
+# Basic Website for Selling Interior
+Basic Website for Selling Interior is a basic Website project for demonstrate selling interior.\
+All Projects descriptions referred to Word file located in the project in Vietnamese language.\
+*Not support running with `php` language and `PostgreSQL` database yet*\
+**GUI Language**: Vietnamese\
+**Coding Language**: HTML, CSS, JavaScript\
+**Database**: Web LocalStorage
 
-## CONTRIBUTORS
-- 3122410202-Văn Tuấn Kiệt
-- 3122410208-Nguyễn Đức Duy Lâm
-- 3122410190-Nguyễn Đình Nam Khương
-- 3122410219-Hồ Hưng Lộc
-- 3122410214-Bùi Bảo Long
+## Usage
+You need to install any IDE with HTML, CSS, JavaScript language support 
 
-### Admin account:
+### Admin account for account management
 - Login name: admin
 - Password: 12345
+
+## Contributors
+- Văn Tuấn Kiệt
+- Nguyễn Đức Duy Lâm
+- Nguyễn Đình Nam Khương
+- Hồ Hưng Lộc
+- Bùi Bảo Long
