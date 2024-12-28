@@ -1,6 +1,5 @@
 # Basic Website for Selling Interior
 Basic Website for Selling Interior is a basic Website project for demonstrate selling interior.\
-All Projects descriptions referred to Word file located in the project in Vietnamese language.\
 *Not support running with `php` language and `PostgreSQL` database yet*\
 **GUI Language**: Vietnamese\
 **Coding Language**: HTML, CSS, JavaScript\
